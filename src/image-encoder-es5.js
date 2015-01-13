@@ -1,5 +1,5 @@
 (function (window) {
-  
+
   function ImageEncoder(path, width, height) {
     this.path = path || '';
     this.width = width || 1;
@@ -20,7 +20,7 @@
     var that = this;
 
     return new Promise(function (resolve, reject) {
-      
+
       var image = new Image();
       image.setAttribute('crossOrigin','anonymous');
 
@@ -52,7 +52,15 @@
       image.src = that.path;
     });
   };
-  
-  window.ImageEncoder = ImageEncoder;
-  
-})(window);
+
+  if (typeof define === 'function' && define.amd) {
+    define(function() {
+      return ImageEncoder;
+    });
+  } else if (typeof module !== 'undefined' && module.exports) {
+    module.exports = ImageEncoder;
+  } else {
+    window.ImageEncoder = ImageEncoder;
+  }
+
+})(typeof window !== 'undefined' ? window : this);
