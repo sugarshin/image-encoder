@@ -1,0 +1,19 @@
+{
+  "name": "image-encoder",
+  "version": "0.2.1",
+  "homepage": "https://github.com/sugarshin/image-encoder",
+  "main": "src/image-encoder-es5.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
